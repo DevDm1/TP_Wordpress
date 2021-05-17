@@ -1,6 +1,6 @@
 ---
 - name: test ping
-  hosts: worpdress
+  hosts: wordpress
   tasks:
   - name: ping
     ping:
