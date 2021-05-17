@@ -4,21 +4,21 @@
   hosts: wordpress
   tasks:
 #PHP
-  - name: ADD the ondrej PHP PPA
-    apt_repository:
-      repo:'ppa:ondrej/php'
-    ignore_errors: true
-  - name: Install php
-    package:
-      name:"{{ item }}"
-      state: present
-    loop:
-      - php
-      - php-fpm
-      - php-mysql
-      - php-xml
-    - name: Remove apache
-      package:
-        name: apache2
-        state: absent
+   - name: ADD the ondrej PHP PPA
+     apt_repository:
+       repo:'ppa:ondrej/php'
+      ignore_errors: true
+   - name: Install php
+     package:
+       name:"{{ item }}"
+       state: present
+     loop:
+       - php
+       - php-fpm
+       - php-mysql
+       - php-xml
+     - name: Remove apache
+       package:
+         name: apache2
+         state: absent
   ...
