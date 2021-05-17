@@ -10,8 +10,8 @@
       ignore_errors: true
     - name: Install php
       package:
-       name:"{{ item }}"
-       state: present
+        name:"{{ item }}"
+      state: present
       loop:
        - php
        - php-fpm
@@ -19,6 +19,6 @@
        - php-xml
     - name: Remove apache
       package:
-       name: apache2
-       state: absent
+        name: apache2
+        state: absent
   ...
