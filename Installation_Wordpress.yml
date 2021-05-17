@@ -10,8 +10,8 @@
       ignore_errors: true
     - name: Install php
       package:
-        name:"{{ item }}"
-      state: present
+        name: "{{ item }}"
+        state: present
       loop:
        - php
        - php-fpm
