@@ -21,4 +21,3 @@
       package:
         name: apache2
         state: absent
-  ...
