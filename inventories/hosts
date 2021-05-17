@@ -1,0 +1,4 @@
+vmcible ansible_hosts=192.168.56.106 ansible_user=webadmin become=yes
+
+[wordpress]
+vmcible
