@@ -70,3 +70,4 @@
         src: templates/mysql/my.cnf.j2
         dest: /root/.my.cnf
       when: mysql_new_root_pass.changed
+...
