@@ -1,0 +1,6 @@
+---
+- name: test ping
+  hosts: worpdress
+  tasks:
+    - name: ping
+      ping:
