@@ -3,8 +3,8 @@
 - hosts: wordpress
   become:
   roles:
-    - role: prerequis
+    - role: wp.prerequis
     - role: wp.php
     - role: wp.mysql
     - role: wp.nginx
-    - role: wordpress
+    - role: wp.wordpress
