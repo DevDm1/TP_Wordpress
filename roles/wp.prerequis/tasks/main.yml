@@ -1,13 +1,10 @@
 ---
-#Unzip
 
-    - name: Installation Wordpress
-      become: true
-      hosts: wordpress
-      tasks:
-        - name: Install unzip package
-          package:
-            name: unzip
-            state: present
-
-...
+- name: Installation Wordpress
+  become: true
+  hosts: wordpress
+  tasks:
+    - name: Install unzip package
+      package:
+        name: unzip
+        state: present
