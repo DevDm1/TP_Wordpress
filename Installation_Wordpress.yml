@@ -6,7 +6,8 @@
 
 #Unzip
     - name: Install unzip package
-      package : unzip
+      package:
+        name: unzip
         state:  present
 
 #PHP
