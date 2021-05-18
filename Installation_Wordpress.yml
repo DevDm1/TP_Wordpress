@@ -5,10 +5,14 @@
   tasks:
 
 #Unzip
-    - name: Install unzip package
-      package:
-        name: unzip
-        state:  present
+- hosts: wordpress
+  become:
+  roles:
+    - role: prerequis
+    - role: wp.php
+    - role: wp.mysql
+    - role: wp.nginx
+    - role: wordpress
 
 #PHP
     - name: ADD the ondrej PHP PPA
@@ -78,6 +82,7 @@
         dest: /root/.my.cnf
       when: mysql_new_root_pass.changed
 
+#Nginx
     - name: Installation nginx
       package:
         name: nginx
@@ -94,6 +99,7 @@
         dest: /etc/nginx/sites-available/default
       notify: restart nginx
 
+#wordpress
     - name: Create prokect folder
       file:
         path: /var/www/book.example.com
