@@ -3,6 +3,12 @@
   become: true
   hosts: wordpress
   tasks:
+
+#Unzip
+    - name: Install unzip package
+      package : unzip
+        state:  present
+
 #PHP
     - name: ADD the ondrej PHP PPA
       apt_repository:
@@ -103,6 +109,14 @@
         dest: /tmp/wordpress.zip
         checksum: "sha1:{{wp_checksum.content}}"
 
+    - name: Unzip Wordpress
+      unarchive:
+        src: /tmp/wordpress.zip
+        dest: /tmp
+        remote_src: yes
+        creates: /tmp/wordpress/wp-settings.php
+
+#Handler
   handlers:
     - name: restart nginx
       service:
