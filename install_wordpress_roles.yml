@@ -7,4 +7,4 @@
     - role: wp.php
     - role: wp.mysql
     - role: wp.nginx
-    - role: wordpress 
+    - role: wordpress
