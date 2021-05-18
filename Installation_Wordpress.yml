@@ -1,18 +1,14 @@
 ---
-- name: Installation de wordpress
+#Unzip
+
+- name: Installation Wordpress
   become: true
   hosts: wordpress
   tasks:
-
-#Unzip
-- hosts: wordpress
-  become:
-  roles:
-    - role: prerequis
-    - role: wp.php
-    - role: wp.mysql
-    - role: wp.nginx
-    - role: wordpress
+    - name: Install unzip package
+      package:
+        name: unzip
+        state: present
 
 #PHP
     - name: ADD the ondrej PHP PPA

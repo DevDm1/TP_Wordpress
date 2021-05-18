@@ -1,8 +1,10 @@
 ---
-# tasks file for wp.prerequis
+- name: Installation Wordpress
+  become: true
+  hosts: wordpress
+  tasks:
     - name: Install unzip package
       package:
         name: unzip
-        state:  present
-
+        state: present
 ...
