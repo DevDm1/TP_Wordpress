@@ -113,7 +113,7 @@
     - name: Unzip Wordpress
       unarchive:
         src: /tmp/wordpress.zip
-        dest: /var/www/
+        dest: /var/www
         remote_src: yes
         creates: /var/www/wordpress/wp-settings.php
 
