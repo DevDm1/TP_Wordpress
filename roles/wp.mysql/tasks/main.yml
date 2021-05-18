@@ -45,7 +45,7 @@
 
     - name: Create my.cnf
       template:
-        src: roles/wp.mysql/mycnf.j2
+        src: templates/wp.mysql/mycnf.j2
         dest: /root/.my.cnf
       when: mysql_new_root_pass.changed
 ...
