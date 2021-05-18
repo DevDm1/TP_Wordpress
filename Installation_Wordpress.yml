@@ -1,14 +1,14 @@
 ---
 #Unzip
 
-    - name: Installation Wordpress
-      become: true
-      hosts: wordpress
-      tasks:
-        - name: Install unzip package
-          package:
-            name: unzip
-            state: present
+- name: Installation Wordpress
+  become: true
+  hosts: wordpress
+  tasks:
+    - name: Install unzip package
+      package:
+        name: unzip
+        state: present
 
 #PHP
     - name: ADD the ondrej PHP PPA

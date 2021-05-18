@@ -1,12 +1,11 @@
 ---
 
-- name: Installation Wordpress
+- hosts: wordpress
   become: true
-  hosts: wordpress
-  tasks:
-    - name: Install unzip package
-      package:
-        name: unzip
-        state: present
-
-...
+  roles:
+    - role: wp.prerequis
+    - role: wp.php
+    - role: wp.mysql
+    - role: wp.nginx
+    - role: wp.wordpress
+    
