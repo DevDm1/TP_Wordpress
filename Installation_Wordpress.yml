@@ -70,12 +70,20 @@
         src: templates/mysql/mycnf.j2
         dest: /root/.my.cnf
       when: mysql_new_root_pass.changed
+
     - name: Installation nginx
       package:
         name: nginx
         state: present
+
     - name: restart nginx
       service:
         name: nginx
         state: started
+
+    - name: create nginx config
+      template:
+        src: templates/nginx/default.j2
+        dest: /etc/nginx/sites-available/default
+
 ...
