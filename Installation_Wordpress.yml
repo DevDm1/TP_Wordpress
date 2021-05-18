@@ -87,8 +87,15 @@
         dest: /etc/nginx/sites-available/default
       notify: restart nginx
 
+    - name: Create prokect folder
+      file:
+        path: /var/www/book.example.com
+        state: directory
+
   handlers:
     - name: restart nginx
       service:
         name: nginx
         state: restarted
+
+...
